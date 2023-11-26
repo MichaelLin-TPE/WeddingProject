@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context=".CustomerSelectionFemaleFragment">
+
+        <ImageView
+            android:id="@+id/back"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:src="@drawable/back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"/>
+
+
+
+        <ImageView
+            android:id="@+id/bg"
+            android:src="@drawable/customer_selection_bg"
+            app:layout_constraintBottom_toTopOf="@id/logo"
+            app:layout_constraintTop_toBottomOf="@id/back"
+            android:layout_width="match_parent"
+            android:layout_marginTop="120dp"
+            android:layout_height="0dp"/>
+
+        <ImageView
+            android:id="@+id/bg2"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/logo"
+            app:layout_constraintRight_toRightOf="parent"
+            android:src="@drawable/customer_selection_bg2"
+            android:scaleType="fitXY"
+            android:layout_marginEnd="130dp"
+            android:layout_marginBottom="50dp"
+            android:layout_width="0dp"
+            android:layout_height="350dp"/>
+
+
+        <ImageView
+            android:id="@+id/bg4"
+            android:src="@drawable/customer_selection_bg4"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/bg"
+            android:layout_marginTop="110dp"
+            android:layout_width="0dp"
+            android:scaleType="fitXY"
+            android:layout_marginHorizontal="55dp"
+            android:layout_height="320dp"/>
+
+
+        <ImageView
+            android:id="@+id/bg3"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/logo"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginBottom="130dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/customer_selection_bg3"
+            android:layout_marginStart="140dp"
+            android:layout_width="0dp"
+            android:layout_height="350dp"/>
+
+
+        <TextView
+            android:text="家人"
+            app:layout_constraintTop_toTopOf="@id/bg2"
+            app:layout_constraintBottom_toBottomOf="@id/bg2"
+            app:layout_constraintLeft_toLeftOf="@id/bg2"
+            app:layout_constraintRight_toRightOf="@id/bg2"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:layout_marginBottom="40dp"
+            android:layout_marginEnd="70dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="親戚"
+            app:layout_constraintTop_toTopOf="@id/bg3"
+            app:layout_constraintBottom_toBottomOf="@id/bg3"
+            app:layout_constraintLeft_toLeftOf="@id/bg3"
+            app:layout_constraintRight_toRightOf="@id/bg3"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:layout_marginBottom="40dp"
+            android:layout_marginStart="100dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+        <TextView
+            android:text="朋友"
+            app:layout_constraintTop_toTopOf="@id/bg4"
+            app:layout_constraintBottom_toBottomOf="@id/bg4"
+            app:layout_constraintLeft_toLeftOf="@id/bg4"
+            app:layout_constraintRight_toRightOf="@id/bg4"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+        <ImageView
+            android:id="@+id/logo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:src="@drawable/logo2"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"/>
+
+
+        <TextView
+            android:text="貴賓區&lt;女方"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginBottom="15dp"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:layout_marginEnd="100dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
