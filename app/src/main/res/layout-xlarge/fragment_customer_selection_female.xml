@@ -62,6 +62,8 @@
 
 
         <TextView
+            android:id="@+id/brother_sister"
+            android:padding="100dp"
             android:text="家人"
             app:layout_constraintTop_toTopOf="@id/bg2"
             app:layout_constraintBottom_toBottomOf="@id/bg2"
@@ -75,6 +77,8 @@
             android:layout_height="wrap_content"/>
 
         <TextView
+            android:id="@+id/family"
+            android:padding="100dp"
             android:text="親戚"
             app:layout_constraintTop_toTopOf="@id/bg3"
             app:layout_constraintBottom_toBottomOf="@id/bg3"
@@ -89,6 +93,8 @@
 
 
         <TextView
+            android:id="@+id/friend"
+            android:padding="100dp"
             android:text="朋友"
             app:layout_constraintTop_toTopOf="@id/bg4"
             app:layout_constraintBottom_toBottomOf="@id/bg4"

@@ -48,6 +48,37 @@ class CustomerSelectionMaleFragment : Fragment() {
             intent.putExtra("customerType","lineage")
             startActivity(intent)
         }
+        binding.collegeFriend.setOnClickListener {
+            val intent = Intent(fragmentActivity,CustomerListActivity::class.java)
+            intent.putExtra("type",0) //0 男生的親友
+            intent.putExtra("customerType","college_friend")
+            startActivity(intent)
+        }
+        binding.highFriend.setOnClickListener {
+
+            val intent = Intent(fragmentActivity,CustomerListActivity::class.java)
+            intent.putExtra("type",0) //0 男生的親友
+            intent.putExtra("customerType","high_friend")
+            startActivity(intent)
+        }
+        binding.hotel.setOnClickListener {
+            val intent = Intent(fragmentActivity,CustomerListActivity::class.java)
+            intent.putExtra("type",0) //0 男生的親友
+            intent.putExtra("customerType","hotel")
+            startActivity(intent)
+        }
+        binding.company.setOnClickListener {
+            val intent = Intent(fragmentActivity,CustomerListActivity::class.java)
+            intent.putExtra("type",0) //0 男生的親友
+            intent.putExtra("customerType","company")
+            startActivity(intent)
+        }
+        binding.family.setOnClickListener {
+            val intent = Intent(fragmentActivity,CustomerListActivity::class.java)
+            intent.putExtra("type",0) //0 男生的親友
+            intent.putExtra("customerType","family")
+            startActivity(intent)
+        }
     }
 
     override fun onDestroyView() {
