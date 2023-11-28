@@ -32,6 +32,9 @@ class CustomerListActivity : AppCompatActivity() {
 
     }
 
+
+
+
     private fun initHandleLiveData() {
         viewModel.customerListLiveData.observe(this){
             showCustomerList(it)

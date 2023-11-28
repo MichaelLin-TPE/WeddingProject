@@ -12,9 +12,10 @@ import javax.security.auth.callback.Callback
 class FirebaseRepository {
 
     private val db = Firebase.firestore
+    private var type = 0
 
     fun getCustomList(type:Int,customerCallBack: customerCallBack){
-
+        this.type = type
         db.collection(if (type == 0)"michael_customer" else "joyce_customer")
             .document("customer_list")
             .get()
@@ -38,7 +39,18 @@ class FirebaseRepository {
     }
 
     fun onSendActionToServiceSite(it: CustomerListData) {
+        val json = Gson().toJson(it)
+        val customerInfo = hashMapOf(
+            "customer_info" to json
+        )
+        db.collection(if (type == 0) "michael_service_site" else "joyce_server_site").document("customer")
+            .set(customerInfo)
+            .addOnSuccessListener {
 
+            }
+            .addOnFailureListener {
+
+            }
     }
 
 }

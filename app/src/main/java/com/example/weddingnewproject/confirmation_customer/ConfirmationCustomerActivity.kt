@@ -19,4 +19,8 @@ class ConfirmationCustomerActivity : AppCompatActivity() {
         binding.sit.text = data.sit
 
     }
+
+    override fun onBackPressed() {
+
+    }
 }
