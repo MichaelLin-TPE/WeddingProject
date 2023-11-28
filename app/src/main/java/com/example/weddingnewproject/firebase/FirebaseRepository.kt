@@ -2,6 +2,7 @@ package com.example.weddingnewproject.firebase
 
 import android.util.Log
 import com.example.weddingnewproject.bean.CustomerData
+import com.example.weddingnewproject.bean.CustomerListData
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.google.gson.Gson
@@ -33,6 +34,10 @@ class FirebaseRepository {
             .addOnFailureListener {
                 Log.i("Michael","fail get customer data : $it")
             }
+
+    }
+
+    fun onSendActionToServiceSite(it: CustomerListData) {
 
     }
 

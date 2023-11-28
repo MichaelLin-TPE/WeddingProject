@@ -11,6 +11,9 @@ class CustomerListViewModel : ViewModel() {
     private val customerList = ArrayList<CustomerListData>()
     val customerListLiveData = MutableLiveData<ArrayList<CustomerListData>>()
     val updateCustomerListLiveData = MutableLiveData<ArrayList<CustomerListData>>()
+    val showNameConfirmationDialogLiveData = MutableLiveData<CustomerListData>()
+    val goNextConfirmPageLiveData = MutableLiveData<CustomerListData>()
+    private var nameConfirmationData : CustomerListData? = null
     fun onCreate(type: Int, customerType: String) {
         repository.getCustomList(type) {
             customerList.clear()
@@ -29,5 +32,19 @@ class CustomerListViewModel : ViewModel() {
             data.isSelected = data.name == customerListData.name
         }
         updateCustomerListLiveData.postValue(customerList)
+        nameConfirmationData = customerListData
+
+
+    }
+
+    fun onNameConfirmClickListener() {
+        nameConfirmationData?.let {
+            showNameConfirmationDialogLiveData.postValue(it)
+        }
+    }
+
+    fun onNameConfirmationCallback(it: CustomerListData) {
+        repository.onSendActionToServiceSite(it)
+        goNextConfirmPageLiveData.postValue(it)
     }
 }

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/dialog_confirm_name_selection_shape"
+    android:layout_width="570dp"
+    android:layout_height="420dp">
+
+
+    <TextView
+        android:id="@+id/title"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:textSize="35sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="50dp"
+        android:text="請確認名字是否正確"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/name"
+        android:text="隨風"
+        android:textColor="@color/white"
+        android:textSize="70sp"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/confirm"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/back"
+        android:text="返回選擇"
+        android:textSize="30sp"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:gravity="center"
+        android:paddingVertical="35sp"
+        app:layout_constraintRight_toLeftOf="@id/confirm"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/confirm"
+        android:text="確定"
+        android:textSize="30sp"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:paddingVertical="35sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/back"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"/>
+
+    <View
+        app:layout_constraintBottom_toTopOf="@id/confirm"
+        android:background="#B8B6B6"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+    <View
+        app:layout_constraintTop_toTopOf="@id/confirm"
+        app:layout_constraintBottom_toBottomOf="@id/confirm"
+        app:layout_constraintRight_toLeftOf="@id/confirm"
+        android:background="#B8B6B6"
+        android:layout_width="1dp"
+        android:layout_height="0dp"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

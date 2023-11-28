@@ -1,5 +1,7 @@
 package com.example.weddingnewproject.bean
 
+import java.io.Serializable
+
 data class CustomerListData(
     val name:String,
     val sit:String,
@@ -7,4 +9,4 @@ data class CustomerListData(
     val isNeedCake:Boolean,
     val isAlreadyShow:Boolean,
     var isSelected:Boolean
-    )
+    ): Serializable

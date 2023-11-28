@@ -1,11 +1,14 @@
 package com.example.weddingnewproject.customer_list
 
+import android.content.Intent
+import android.content.pm.ResolveInfo.DisplayNameComparator
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.example.weddingnewproject.R
 import com.example.weddingnewproject.bean.CustomerListData
+import com.example.weddingnewproject.confirmation_customer.ConfirmationCustomerActivity
 import com.example.weddingnewproject.databinding.ActivityCustomerListBinding
 import java.util.ArrayList
 
@@ -36,6 +39,18 @@ class CustomerListActivity : AppCompatActivity() {
         viewModel.updateCustomerListLiveData.observe(this){
             updateCustomerList(it)
         }
+        viewModel.showNameConfirmationDialogLiveData.observe(this){
+            val dialog = NameConfirmationDialog.newInstance(it)
+            dialog.show(supportFragmentManager,"dialog")
+            dialog.setOnNameConfirmationCallback {
+                viewModel.onNameConfirmationCallback(it)
+            }
+        }
+        viewModel.goNextConfirmPageLiveData.observe(this){
+            val intent = Intent(this@CustomerListActivity,ConfirmationCustomerActivity::class.java)
+            intent.putExtra("data",it)
+            startActivity(intent)
+        }
     }
 
     private fun updateCustomerList(it: ArrayList<CustomerListData>) {
@@ -46,9 +61,7 @@ class CustomerListActivity : AppCompatActivity() {
         adapter = CustomerListAdapter(customerList){ customerListData ->
 
             viewModel.onCustomerSelectedListener(customerListData)
-            for (data in customerList){
-                data.isSelected = data.name == customerListData.name
-            }
+
         }
         binding.customerList.adapter = adapter
         binding.customerList.addItemDecoration(DividerItemDecoration(2))
@@ -59,7 +72,7 @@ class CustomerListActivity : AppCompatActivity() {
             finish()
         }
         binding.confirm.setOnClickListener {
-
+            viewModel.onNameConfirmClickListener()
         }
     }
 }
