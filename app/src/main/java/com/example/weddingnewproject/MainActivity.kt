@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
+import com.example.weddingnewproject.customer.CustomerActivity
 import com.example.weddingnewproject.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -14,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this,R.layout.activity_main)
         binding.customer.setOnClickListener {
-            val intent = Intent(this@MainActivity,CustomerActivity::class.java)
+            val intent = Intent(this@MainActivity, CustomerActivity::class.java)
             startActivity(intent)
         }
     }

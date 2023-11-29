@@ -1,7 +1,8 @@
-package com.example.weddingnewproject
+package com.example.weddingnewproject.customer
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.weddingnewproject.R
 
 class CustomerSelectionActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

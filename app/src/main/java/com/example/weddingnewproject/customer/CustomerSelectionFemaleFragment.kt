@@ -1,4 +1,4 @@
-package com.example.weddingnewproject
+package com.example.weddingnewproject.customer
 
 import android.content.Context
 import android.content.Intent
@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.FragmentActivity
+import com.example.weddingnewproject.R
 import com.example.weddingnewproject.customer_list.CustomerListActivity
 import com.example.weddingnewproject.databinding.FragmentCustomerSelectionFemaleBinding
 
@@ -34,7 +35,8 @@ class CustomerSelectionFemaleFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = DataBindingUtil.inflate(inflater,R.layout.fragment_customer_selection_female,container,false)
+        _binding = DataBindingUtil.inflate(inflater,
+            R.layout.fragment_customer_selection_female,container,false)
         // Inflate the layout for this fragment
         return binding.root
     }
