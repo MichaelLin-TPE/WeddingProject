@@ -92,12 +92,7 @@
             app:layout_constraintTop_toTopOf="@id/bg6" />
 
 
-        <ImageView
-            android:id="@+id/logo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@drawable/logo2"
-            app:layout_constraintBottom_toBottomOf="parent" />
+
 
         <TextView
             android:id="@+id/college_friend"
@@ -182,6 +177,13 @@
             app:layout_constraintRight_toRightOf="@id/bg7"
             app:layout_constraintTop_toTopOf="@id/bg7" />
 
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/logo2"
+            app:layout_constraintBottom_toBottomOf="parent" />
 
         <TextView
             android:layout_width="wrap_content"

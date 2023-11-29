@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".service.confirm_amount.ConfirmAmountFragment">
+
+        <ImageView
+            android:id="@+id/back"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:src="@drawable/back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"/>
+
+
+
+        <ImageView
+            android:scaleType="fitXY"
+            android:src="@drawable/confirm_amount_bg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        <TextView
+            android:id="@+id/need_cake"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="70dp"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:text="要發喜餅"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/center_view"
+            android:layout_marginTop="25sp"
+            android:background="@drawable/confirm_amount_bg2"
+            app:layout_constraintTop_toBottomOf="@id/need_cake"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_width="357dp"
+            android:layout_height="345dp">
+
+            <TextView
+                android:id="@+id/name"
+                android:textSize="30sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:text="Michael"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginTop="12sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/amount"
+                android:textSize="30sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:text="禮金"
+                app:layout_constraintTop_toBottomOf="@id/name"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="40dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:id="@+id/edit_amount"
+                android:layout_marginHorizontal="25sp"
+                app:layout_constraintTop_toTopOf="@id/amount"
+                app:layout_constraintLeft_toRightOf="@id/amount"
+                app:layout_constraintBottom_toBottomOf="@id/amount"
+                app:layout_constraintRight_toRightOf="parent"
+                android:background="@drawable/edit_amount_bg"
+                android:gravity="center"
+                android:inputType="number"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="30sp"
+                android:text="2000"
+                android:paddingHorizontal="10dp"
+                android:layout_width="0dp"
+                android:layout_height="68dp"/>
+
+
+            <TextView
+                android:id="@+id/cake_count"
+                android:textSize="30sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:text="喜餅已給數量"
+                app:layout_constraintTop_toBottomOf="@id/amount"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="50dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+
+            <EditText
+                android:id="@+id/edit_cake_amount"
+                android:layout_marginHorizontal="25sp"
+                app:layout_constraintTop_toTopOf="@id/cake_count"
+                app:layout_constraintLeft_toRightOf="@id/cake_count"
+                app:layout_constraintBottom_toBottomOf="@id/cake_count"
+                app:layout_constraintRight_toRightOf="parent"
+                android:background="@drawable/edit_amount_bg"
+                android:inputType="number"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textSize="30sp"
+                android:text="10"
+                android:paddingHorizontal="10dp"
+                android:layout_width="0dp"
+                android:layout_height="68dp"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+        <TextView
+            android:id="@+id/send"
+            app:layout_constraintTop_toTopOf="@id/center_view"
+            app:layout_constraintRight_toRightOf="@id/center_view"
+            android:layout_marginTop="300dp"
+            android:background="@drawable/confirm_amount_button_bg"
+            android:text="送出"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:gravity="center"
+            android:layout_width="97dp"
+            android:layout_height="89dp"/>
+
+
+        <ImageView
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="@id/send"
+            android:src="@drawable/smell_icon"
+            app:layout_constraintLeft_toLeftOf="@id/send"
+            app:layout_constraintRight_toLeftOf="@id/send"
+            android:layout_width="42dp"
+            android:layout_height="42dp"/>
+
+        <ImageView
+            android:id="@+id/logo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:src="@drawable/logo2"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"/>
+
+
+        <TextView
+            android:text="禮金組"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginBottom="15dp"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:layout_marginEnd="100dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

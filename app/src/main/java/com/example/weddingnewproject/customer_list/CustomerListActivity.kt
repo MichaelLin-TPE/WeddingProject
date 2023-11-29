@@ -17,6 +17,7 @@ class CustomerListActivity : AppCompatActivity() {
     private lateinit var binding:ActivityCustomerListBinding
     private lateinit var viewModel: CustomerListViewModel
     private lateinit var adapter: CustomerListAdapter
+    private var type = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,9 +26,9 @@ class CustomerListActivity : AppCompatActivity() {
 
         initView()
         initHandleLiveData()
-        val type = intent.extras?.getInt("type",0)
+        type = intent.extras?.getInt("type",0)!!
         val customerType = intent.extras?.getString("customerType","")
-        viewModel.onCreate(type!!,customerType!!)
+        viewModel.onCreate(type,customerType!!)
 
 
     }
@@ -52,6 +53,7 @@ class CustomerListActivity : AppCompatActivity() {
         viewModel.goNextConfirmPageLiveData.observe(this){
             val intent = Intent(this@CustomerListActivity,ConfirmationCustomerActivity::class.java)
             intent.putExtra("data",it)
+            intent.putExtra("type",type)
             startActivity(intent)
         }
     }
