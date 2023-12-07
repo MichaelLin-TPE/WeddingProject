@@ -17,10 +17,9 @@
             android:layout_height="30dp"/>
 
 
-
         <ImageView
             android:scaleType="fitXY"
-            android:src="@drawable/confirm_amount_bg"
+            android:src="@drawable/final_confirm_bg"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
         <TextView
@@ -47,49 +46,23 @@
             android:layout_width="357dp"
             android:layout_height="345dp">
 
-            <TextView
-                android:id="@+id/name"
-                android:textSize="30sp"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                android:text="Michael"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                android:layout_marginTop="12sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+
 
             <TextView
                 android:id="@+id/amount"
                 android:textSize="30sp"
                 android:textColor="@color/white"
                 android:textStyle="bold"
-                android:text="禮金"
-                app:layout_constraintTop_toBottomOf="@id/name"
-                app:layout_constraintLeft_toLeftOf="parent"
-                android:gravity="center"
-                app:layout_constraintRight_toRightOf="parent"
-                android:layout_marginTop="40dp"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"/>
-
-
-
-            <TextView
-                android:id="@+id/cake_count"
-                android:textSize="30sp"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                android:text="喜餅已給數量"
-                app:layout_constraintTop_toBottomOf="@id/amount"
+                android:text="資料已送出\n待下位賓客選取名字"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 android:gravity="center"
-
-                android:layout_marginTop="50dp"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
+
+
 
 
 
@@ -97,18 +70,14 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-        <TextView
-            android:id="@+id/send"
-            android:text="確認送出"
-            android:textColor="@color/white"
-            android:background="@drawable/confirm_send_button_bg"
-            android:gravity="center"
-            android:textSize="25sp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/center_view"
-            android:layout_width="188dp"
-            android:layout_height="63dp"/>
+        <ImageView
+            app:layout_constraintTop_toTopOf="@id/center_view"
+            app:layout_constraintRight_toRightOf="@id/center_view"
+            android:scaleType="centerCrop"
+            android:src="@drawable/final_icon"
+            android:layout_width="138dp"
+            android:layout_height="107dp"/>
+
 
 
         <ImageView
@@ -116,19 +85,20 @@
             app:layout_constraintBottom_toBottomOf="parent"
             android:src="@drawable/logo2"
             android:layout_width="match_parent"
-            android:layout_height="100dp"/>
+            android:layout_height="120dp"/>
 
 
         <TextView
             android:text="禮金組"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            android:layout_marginBottom="15dp"
+            android:layout_marginBottom="20dp"
             android:textColor="@color/black"
-            android:textSize="12sp"
-            android:layout_marginEnd="100dp"
+            android:textSize="15sp"
+            android:layout_marginEnd="110dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -34,7 +34,10 @@ class CustomerListActivity : AppCompatActivity() {
     }
 
 
-
+    override fun onResume() {
+        super.onResume()
+        viewModel.onResume()
+    }
 
     private fun initHandleLiveData() {
         viewModel.customerListLiveData.observe(this){

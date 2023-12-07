@@ -1,6 +1,7 @@
 package com.example.weddingnewproject.service.waiting_page
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -8,7 +9,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import com.example.weddingnewproject.R
 import com.example.weddingnewproject.bean.CustomerListData
-import com.example.weddingnewproject.service.confirm_amount.ConfirmAmountFragment
+import com.example.weddingnewproject.service.confirm_amount.input.InputAmountFragment
 
 
 class WaitingFragment : Fragment() {
@@ -17,7 +18,18 @@ class WaitingFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.i("Michael","onCreate")
+    }
 
+    override fun onStop() {
+        super.onStop()
+        Log.i("Michael","onStop")
+        viewModel.onStop()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.i("Michael","onResume")
     }
 
     override fun onCreateView(
@@ -43,6 +55,7 @@ class WaitingFragment : Fragment() {
 
     private fun onHandleLiveData() {
         viewModel.customerInfoLiveData.observe(viewLifecycleOwner){data->
+            Log.i("Michael","goAmountConfirmPage")
             data?.let {
                 goAmountConfirmPage(it)
             }
@@ -51,7 +64,7 @@ class WaitingFragment : Fragment() {
 
     private fun goAmountConfirmPage(data: CustomerListData) {
         val transaction = activity?.supportFragmentManager?.beginTransaction()
-        transaction?.replace(R.id.container,ConfirmAmountFragment.newInstance(data))
+        transaction?.replace(R.id.container, InputAmountFragment.newInstance(data))
         transaction?.addToBackStack(null)
         transaction?.commit()
     }

@@ -15,6 +15,9 @@
         android:theme="@style/Theme.WeddingNewProject"
         tools:targetApi="31">
         <activity
+            android:name=".sit.SitActivity"
+            android:exported="false" />
+        <activity
             android:name=".service.ServiceWaitingActivity"
             android:exported="false" />
         <activity
@@ -28,7 +31,8 @@
             android:exported="false" />
         <activity
             android:name=".customer.CustomerSelectionActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:launchMode="singleTop" />
         <activity
             android:name=".customer.CustomerActivity"
             android:exported="false" />

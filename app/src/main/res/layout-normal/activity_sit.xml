@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".sit.SitActivity">
+
+        <TextView
+            android:id="@+id/main_table"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="18sp"
+            android:background="@drawable/sit_bg"
+            android:gravity="center"
+            android:text="主桌"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/table_1"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/sit_bg"
+            android:gravity="center"
+            android:text="朋友\nJoyce"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toLeftOf="@id/table_10"
+            app:layout_constraintTop_toBottomOf="@id/main_table" />
+
+        <TextView
+            android:id="@+id/table_2"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="40dp"
+            android:background="@drawable/sit_bg"
+            android:gravity="center"
+            android:text="朋友\nJoyce"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toRightOf="@id/table_1"
+            app:layout_constraintTop_toTopOf="@id/table_1" />
+
+        <TextView
+            android:id="@+id/table_3"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="20dp"
+            android:background="@drawable/sit_bg"
+            android:gravity="center"
+            android:text="家人\nJoyce"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintRight_toRightOf="@id/table_13"
+            app:layout_constraintTop_toTopOf="@id/table_1" />
+
+        <TextView
+            android:id="@+id/table_4"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/sit_bg"
+            android:gravity="center"
+            android:text="朋友\nJoyce"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toLeftOf="@id/table_10"
+            app:layout_constraintTop_toBottomOf="@id/table_1" />
+
+        <TextView
+            android:id="@+id/table_5"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/sit_bg"
+            android:gravity="center"
+            android:text="親戚\nJoyce"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toLeftOf="@id/table_2"
+            app:layout_constraintTop_toTopOf="@id/table_4" />
+
+        <TextView
+            android:id="@+id/table_6"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/sit_bg"
+            android:gravity="center"
+            android:text="大學Michael"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintRight_toRightOf="@id/table_13"
+            app:layout_constraintTop_toTopOf="@id/table_4" />
+
+        <TextView
+            android:id="@+id/table_7"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/sit_bg"
+            android:gravity="center"
+            android:text="大學Michael"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toLeftOf="@id/table_10"
+            app:layout_constraintTop_toBottomOf="@id/table_4" />
+
+        <TextView
+            android:id="@+id/table_8"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/sit_bg"
+            android:gravity="center"
+            android:text="國中Michael"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toLeftOf="@id/table_5"
+            app:layout_constraintTop_toTopOf="@id/table_7" />
+
+        <TextView
+            android:id="@+id/table_9"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/sit_bg"
+            android:gravity="center"
+            android:text="儷夏Michael"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintRight_toRightOf="@id/table_13"
+            app:layout_constraintTop_toTopOf="@id/table_8" />
+
+        <TextView
+            android:id="@+id/table_18"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/sit_bg"
+            android:gravity="center"
+            android:text="親戚Michael"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toLeftOf="@id/table_10"
+            app:layout_constraintTop_toBottomOf="@id/table_7" />
+
+
+        <TextView
+            android:id="@+id/table_10"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/sit_bg"
+            android:gravity="center"
+            android:text="儷夏Michael"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/table_11"
+            app:layout_constraintTop_toBottomOf="@id/table_18" />
+
+        <TextView
+            android:id="@+id/table_11"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/sit_bg"
+            android:gravity="center"
+            android:text="朋友Michael"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toRightOf="@id/table_10"
+            app:layout_constraintRight_toLeftOf="@id/table_12"
+            app:layout_constraintTop_toTopOf="@id/table_10" />
+
+        <TextView
+            android:id="@+id/table_12"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/sit_bg"
+            android:gravity="center"
+            android:text="朋友Michael"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toRightOf="@id/table_11"
+            app:layout_constraintRight_toLeftOf="@id/table_13"
+            app:layout_constraintTop_toTopOf="@id/table_10" />
+
+        <TextView
+            android:id="@+id/table_13"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/sit_bg"
+            android:gravity="center"
+            android:text="同事Michael"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toRightOf="@id/table_12"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/table_10" />
+
+
+        <TextView
+            android:id="@+id/table_14"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/sit_bg"
+            android:gravity="center"
+            android:text="親戚Michael"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/table_15"
+            app:layout_constraintTop_toBottomOf="@id/table_10" />
+
+        <TextView
+            android:id="@+id/table_15"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/sit_bg"
+            android:gravity="center"
+            android:text="親戚Michael"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintLeft_toRightOf="@id/table_14"
+            app:layout_constraintRight_toLeftOf="@id/table_16"
+            app:layout_constraintTop_toBottomOf="@id/table_11" />
+
+        <TextView
+            android:id="@+id/table_16"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/sit_bg"
+            android:gravity="center"
+            android:text="親戚Michael"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintLeft_toRightOf="@id/table_15"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/table_12" />
+
+        <TextView
+            android:id="@+id/table_17"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/sit_bg"
+            android:gravity="center"
+            android:text="親戚Michael"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toLeftOf="@id/table_8"
+            app:layout_constraintTop_toTopOf="@id/table_18" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="主\n幹\n道"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toTopOf="@id/table_12"
+            app:layout_constraintLeft_toRightOf="@id/table_2"
+            app:layout_constraintRight_toLeftOf="@id/table_3"
+            app:layout_constraintTop_toTopOf="@id/table_1" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

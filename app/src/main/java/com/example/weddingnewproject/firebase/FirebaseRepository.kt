@@ -12,10 +12,8 @@ import com.google.gson.reflect.TypeToken
 class FirebaseRepository {
 
     private val db = Firebase.firestore
-    private var type = 0
 
     fun getCustomList(type:Int,customerCallBack: customerCallBack){
-        this.type = type
         db.collection(if (type == 0)"michael_customer" else "joyce_customer")
             .document("customer_list")
             .get()
@@ -37,7 +35,7 @@ class FirebaseRepository {
 
     }
 
-    fun onSendActionToServiceSite(it: CustomerListData) {
+    fun onSendActionToServiceSite(type: Int,it: CustomerListData) {
         val json = Gson().toJson(it)
         val customerInfo = hashMapOf(
             "customer_info" to json
@@ -53,19 +51,21 @@ class FirebaseRepository {
     }
 
     fun onDetectCustomer(type: Int,customerInfoCallBack: customerInfoCallBack) {
-        this.type = type
-        val docRef = db.collection(if (type == 0) "michael_service_site" else "joyce_service_site").document("customer")
+        Log.i("Michael","type:$type")
+        val docRef = db.collection(if (type == 0) "michael_service_site" else "joyce_server_site").document("customer")
         docRef.addSnapshotListener { value, error ->
 
             if (error != null){
+                Log.i("Michael","error $error")
                 return@addSnapshotListener
             }
             if (value != null && value.exists()){
                 val json = value.getString("customer_info")
                 if (json.isNullOrEmpty()){
-                    customerInfoCallBack(null)
+                    Log.i("Michael","無資料")
                     return@addSnapshotListener
                 }
+                Log.i("Michael","有資料")
                 val data : CustomerListData = Gson().fromJson(json,CustomerListData::class.java)
                 Log.i("Michael","監聽到資料 : ${Gson().toJson(data)}")
                 customerInfoCallBack(data)
@@ -74,8 +74,8 @@ class FirebaseRepository {
         }
     }
 
-    fun onDeleteData(callback: ()->Unit) {
-        db.collection(if (type == 0) "michael_service_site" else "joyce_service_site")
+    fun onDeleteData(type: Int,callback: ()->Unit) {
+        db.collection(if (type == 0) "michael_service_site" else "joyce_server_site")
             .document("customer")
             .update("customer_info",FieldValue.delete())
             .addOnSuccessListener {
@@ -87,7 +87,7 @@ class FirebaseRepository {
 
     }
 
-    fun onSendAction(action: String) {
+    fun onSendAction(type: Int,action: String) {
         val hashMap = hashMapOf(
             "action" to action
         )
@@ -114,6 +114,39 @@ class FirebaseRepository {
             }
 
         }
+    }
+
+    fun updateCustomerList(json: String, type: Int, callback: () -> Unit) {
+        val map = hashMapOf(
+            "customer_list" to json
+        )
+        db.collection(if (type == 0)"michael_customer" else "joyce_customer")
+            .document("customer_list")
+            .set(map)
+            .addOnSuccessListener {
+                callback()
+            }
+    }
+
+    fun clearAction(type: Int) {
+        val map = hashMapOf(
+            "action" to ""
+        )
+        db.collection("action")
+            .document(if (type == 0) "michael_customer" else "joyce_customer")
+            .set(map)
+    }
+
+    fun clearCustomerData(type: Int?) {
+        db.collection(if (type == 0) "michael_service_site" else "joyce_server_site")
+            .document("customer")
+            .update("customer_info",FieldValue.delete())
+            .addOnSuccessListener {
+
+            }
+            .addOnFailureListener {
+
+            }
     }
 
 }

@@ -1,4 +1,4 @@
-package com.example.weddingnewproject.service.confirm_amount
+package com.example.weddingnewproject.service.confirm_amount.input
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,15 +9,15 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.example.weddingnewproject.R
 import com.example.weddingnewproject.bean.CustomerListData
-import com.example.weddingnewproject.databinding.FragmentConfirmAmountBinding
-import com.example.weddingnewproject.service.waiting_page.WaitingViewModel
+import com.example.weddingnewproject.databinding.FragmentInputAmountBinding
+import com.example.weddingnewproject.service.confirm_amount.confirm.ConfirmAmountFragment
 
 
-class ConfirmAmountFragment : Fragment() {
+class InputAmountFragment : Fragment() {
 
-    private var _binding:FragmentConfirmAmountBinding? = null
+    private var _binding:FragmentInputAmountBinding? = null
     private val binding get() = _binding!!
-    private lateinit var viewModel: ConfirmAmountViewModel
+    private lateinit var viewModel: InputAmountViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,14 +29,14 @@ class ConfirmAmountFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = DataBindingUtil.inflate(inflater,
-            R.layout.fragment_confirm_amount,container,false)
+            R.layout.fragment_input_amount,container,false)
         // Inflate the layout for this fragment
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel = ViewModelProvider(this)[ConfirmAmountViewModel::class.java]
+        viewModel = ViewModelProvider(this)[InputAmountViewModel::class.java]
         onHandleLiveData()
         initView()
         val infoData : CustomerListData = arguments?.getSerializable("data") as CustomerListData
@@ -65,6 +65,12 @@ class ConfirmAmountFragment : Fragment() {
         viewModel.backLiveData.observe(viewLifecycleOwner){
             parentFragmentManager.popBackStack()
         }
+        viewModel.goConfirmPageLiveData.observe(viewLifecycleOwner){
+            val transaction = activity?.supportFragmentManager?.beginTransaction()
+            transaction?.replace(R.id.container, ConfirmAmountFragment.newInstance(it))
+            transaction?.addToBackStack(null)
+            transaction?.commit()
+        }
     }
 
 
@@ -72,7 +78,7 @@ class ConfirmAmountFragment : Fragment() {
 
         @JvmStatic
         fun newInstance(data : CustomerListData) =
-            ConfirmAmountFragment().apply {
+            InputAmountFragment().apply {
                 arguments = Bundle().apply {
                    putSerializable("data",data)
                 }

@@ -8,13 +8,16 @@ class ConfirmationCustomerViewModel : ViewModel() {
 
     val backLiveData = MutableLiveData<Boolean>()
     private val firebaseRepository = FirebaseRepository()
-
+    val backToCustomerSelectionPageLiveData = MutableLiveData<Boolean>()
 
     fun onCreate(type: Int) {
         firebaseRepository.onDetectAction(type) {action->
             when(action){
                 "back"->{
                     backLiveData.postValue(true)
+                }
+                "backToCustomerSelection"->{
+                    backToCustomerSelectionPageLiveData.postValue(true)
                 }
             }
         }

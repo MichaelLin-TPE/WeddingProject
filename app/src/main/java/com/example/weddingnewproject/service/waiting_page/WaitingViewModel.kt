@@ -12,8 +12,16 @@ class WaitingViewModel : ViewModel() {
     fun onViewCreated(type: Int) {
 
         firebaseRepository.onDetectCustomer(type){ infoData->
-            customerInfoLiveData.postValue(infoData)
+            infoData?.let {
+                it.type = type
+                customerInfoLiveData.postValue(it)
+            }
+
         }
+    }
+
+    fun onStop() {
+        customerInfoLiveData.postValue(null)
     }
 
     private val firebaseRepository = FirebaseRepository()

@@ -1,15 +1,16 @@
-package com.example.weddingnewproject.service.confirm_amount
+package com.example.weddingnewproject.service.confirm_amount.input
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.weddingnewproject.bean.CustomerListData
 import com.example.weddingnewproject.firebase.FirebaseRepository
 
-class ConfirmAmountViewModel : ViewModel() {
+class InputAmountViewModel : ViewModel() {
 
     val needCakeLiveData = MutableLiveData<Boolean>()
     val nameLiveData = MutableLiveData<String>()
     val backLiveData = MutableLiveData<Boolean>()
+    val goConfirmPageLiveData = MutableLiveData<CustomerListData>()
     private var infoData : CustomerListData? = null
     private val firebaseRepository = FirebaseRepository()
 
@@ -20,15 +21,21 @@ class ConfirmAmountViewModel : ViewModel() {
     }
 
     fun onSendButtonClickListener(amount: String, cakeCount: String) {
+        infoData?.let {
+            it.amount = amount.toInt()
+            it.isNeedCake = cakeCount.toInt() > 0
+            it.cakeCount = cakeCount.toInt()
+            goConfirmPageLiveData.postValue(it)
+        }
 
     }
 
     fun onBackPressedListener() {
         infoData?.let {
-            firebaseRepository.onDeleteData{
+            firebaseRepository.onDeleteData(it.type){
                 backLiveData.postValue(true)
             }
-            firebaseRepository.onSendAction("back")
+            firebaseRepository.onSendAction(it.type,"back")
         }
     }
 

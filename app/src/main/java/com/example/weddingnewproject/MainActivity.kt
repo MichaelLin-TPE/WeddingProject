@@ -7,6 +7,7 @@ import androidx.databinding.DataBindingUtil
 import com.example.weddingnewproject.customer.CustomerActivity
 import com.example.weddingnewproject.databinding.ActivityMainBinding
 import com.example.weddingnewproject.service.ServiceActivity
+import com.example.weddingnewproject.sit.SitActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,6 +22,10 @@ class MainActivity : AppCompatActivity() {
         }
         binding.service.setOnClickListener {
             val intent = Intent(this@MainActivity, ServiceActivity::class.java)
+            startActivity(intent)
+        }
+        binding.sit.setOnClickListener {
+            val intent = Intent(this@MainActivity,SitActivity::class.java)
             startActivity(intent)
         }
     }
