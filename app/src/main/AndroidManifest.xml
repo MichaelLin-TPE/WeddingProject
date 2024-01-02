@@ -15,6 +15,12 @@
         android:theme="@style/Theme.WeddingNewProject"
         tools:targetApi="31">
         <activity
+            android:name=".management_area.AmountListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".management_area.InputPasswordActivity"
+            android:exported="false" />
+        <activity
             android:name=".sit.SitActivity"
             android:exported="false" />
         <activity

@@ -86,7 +86,7 @@
                 android:textColor="@color/white"
                 app:layout_constraintTop_toBottomOf="@id/name"
                 app:layout_constraintLeft_toLeftOf="parent"
-                android:layout_marginStart="50sp"
+                android:layout_marginStart="20sp"
                 android:layout_marginTop="10dp"
                 android:text="座位:"
                 android:layout_width="wrap_content"
@@ -94,14 +94,15 @@
 
             <TextView
                 android:id="@+id/sit"
-                android:textSize="30sp"
+                android:textSize="20sp"
                 android:textColor="@color/white"
-                android:text="A01"
+                android:text="男方親戚2桌"
+                android:gravity="center"
                 app:layout_constraintBottom_toBottomOf="@id/sit_title"
                 app:layout_constraintTop_toTopOf="@id/sit_title"
                 app:layout_constraintRight_toRightOf="@id/bottom_line"
                 app:layout_constraintLeft_toLeftOf="@id/bottom_line"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"/>
 
             <View

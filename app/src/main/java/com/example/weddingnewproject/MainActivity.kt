@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import com.example.weddingnewproject.customer.CustomerActivity
 import com.example.weddingnewproject.databinding.ActivityMainBinding
+import com.example.weddingnewproject.management_area.InputPasswordActivity
 import com.example.weddingnewproject.service.ServiceActivity
 import com.example.weddingnewproject.sit.SitActivity
 
@@ -26,6 +27,10 @@ class MainActivity : AppCompatActivity() {
         }
         binding.sit.setOnClickListener {
             val intent = Intent(this@MainActivity,SitActivity::class.java)
+            startActivity(intent)
+        }
+        binding.management.setOnClickListener {
+            val intent = Intent(this@MainActivity,InputPasswordActivity::class.java)
             startActivity(intent)
         }
     }
