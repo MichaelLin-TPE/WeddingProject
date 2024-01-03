@@ -36,7 +36,7 @@
         app:layout_constraintRight_toRightOf="parent"
         android:textColor="@color/black"
         android:textSize="20sp"
-        tools:text="$100,000,000"
+        tools:text="$0"
         android:layout_marginStart="10dp"
         android:layout_width="0dp"
         android:layout_height="0dp"/>

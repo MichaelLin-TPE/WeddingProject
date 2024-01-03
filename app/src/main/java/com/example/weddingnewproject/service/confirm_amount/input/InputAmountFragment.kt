@@ -66,11 +66,19 @@ class InputAmountFragment : Fragment() {
             parentFragmentManager.popBackStack()
         }
         viewModel.goConfirmPageLiveData.observe(viewLifecycleOwner){
+            if (it == null){
+                return@observe
+            }
             val transaction = activity?.supportFragmentManager?.beginTransaction()
             transaction?.replace(R.id.container, ConfirmAmountFragment.newInstance(it))
             transaction?.addToBackStack(null)
             transaction?.commit()
         }
+    }
+
+    override fun onStop() {
+        super.onStop()
+        viewModel.goConfirmPageLiveData.value = null
     }
 
 

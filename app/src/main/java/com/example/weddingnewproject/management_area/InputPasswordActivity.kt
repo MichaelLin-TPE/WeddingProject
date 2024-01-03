@@ -28,7 +28,7 @@ class InputPasswordActivity : AppCompatActivity() {
 
             override fun afterTextChanged(s: Editable?) {
                 val password = s.toString()
-                if (password == "1113"){
+                if (password == "0624"){
                     goToAmountListPage()
                 }
             }
